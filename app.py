@@ -1,9 +1,9 @@
-from flask import Flask,render_template
+from flask import Flask,render_template,url_for
 app=Flask(__name__)  #__name__代表目前執行的模組
 
 @app.route("/") #函式的裝飾，已函式回基礎，提供附加的功能  (寫在函式上)
-def Home():
-  return render_template("index.html")
+def static_file():
+  return render_template('index.html')
 
 @app.route("/test")
 def Test():
